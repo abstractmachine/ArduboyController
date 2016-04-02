@@ -21,6 +21,11 @@ void updateButtons() {
       Keyboard.press(buttons[i].key);
       // show result on Arduboy display
       drawButton(i);
+      // if a tone has been configured
+      if (buttons[i].tone > 0 && buttons[i].duration > 0) {
+      // play a tone
+        arduboy.tunes.tone(buttons[i].tone, buttons[i].duration);
+      }
       // or if we've just released a key that was registered as on
     } else if (!arduboy.pressed(buttons[i].button) && buttons[i].state) {
       // remember this state

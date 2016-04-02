@@ -1,6 +1,6 @@
  /*
   Arduboy Controller
-  http://github.com/abstractmachine/
+  http://github.com/abstractmachine/ArduboyController
   (c) 2016 Douglas Edric Stanley
   This code is provided under the MIT License.
  */
@@ -39,16 +39,18 @@ struct Button {
   char    character;  // ASCII character
   uint8_t x;          // x coordinate on display (MAX:128)
   uint8_t y;          // y coordinate on display (MAX:64)
+  int     tone;       // the tone to play when pressing down
+  int     duration;   // the duration of the tone
 };
 
 // configure the buttons
 Button buttons[] = {
-  {false, LEFT_BUTTON_KEY,  LEFT_BUTTON,  '<', 14, 32}, // LEFT button
-  {false, RIGHT_BUTTON_KEY, RIGHT_BUTTON, '>', 54, 32}, // RIGHT button
-  {false, UP_BUTTON_KEY,    UP_BUTTON,    '^', 34, 16}, // UP button
-  {false, DOWN_BUTTON_KEY,  DOWN_BUTTON,  'v', 34, 48}, // DOWN button
-  {false, A_BUTTON_KEY,     A_BUTTON,     'A', 94, 36}, // A button
-  {false, B_BUTTON_KEY,     B_BUTTON,     'B', 114,28}  // B button
+  {false, LEFT_BUTTON_KEY,  LEFT_BUTTON,  '<', 14, 32, 4186, 0}, // LEFT button
+  {false, RIGHT_BUTTON_KEY, RIGHT_BUTTON, '>', 54, 32, 4186, 0}, // RIGHT button
+  {false, UP_BUTTON_KEY,    UP_BUTTON,    '^', 34, 16, 4186, 0}, // UP button
+  {false, DOWN_BUTTON_KEY,  DOWN_BUTTON,  'v', 34, 48, 4186, 0}, // DOWN button
+  {false, A_BUTTON_KEY,     A_BUTTON,     'A', 94, 36, 2093, 0}, // A button
+  {false, B_BUTTON_KEY,     B_BUTTON,     'B', 114,28, 1760, 0}  // B button
 };
 
 #define TEXT_SIZE             1
