@@ -10,13 +10,25 @@
 
 Arduboy arduboy;
 
-// Change the following two defines if you want to map to different keys
-// for example, to map the A key to 'space bar' and the B key to 'left shift' try:
-// #define A_BUTTON_KEY ' '
-// #define B_BUTTON_KEY KEY_LEFT_SHIFT
+// Change the following two defines if you want to map A & B buttons to different keys
 
 #define A_BUTTON_KEY          KEY_LEFT_CTRL   // what key is pressed with A button
 #define B_BUTTON_KEY          KEY_LEFT_ALT    // what key is pressed with B button
+
+//#define A_BUTTON_KEY          ' '             // map A button to the 'space bar'
+//#define B_BUTTON_KEY          KEY_LEFT_SHIFT  // map B button to 'left shift'
+
+// Change these four defines if you want to map the direction buttons to different keys
+
+#define LEFT_BUTTON_KEY       KEY_LEFT_ARROW  // what key is pressed with LEFT button
+#define RIGHT_BUTTON_KEY      KEY_RIGHT_ARROW // what key is pressed with RIGHT button
+#define UP_BUTTON_KEY         KEY_UP_ARROW    // what key is pressed with UP button
+#define DOWN_BUTTON_KEY       KEY_DOWN_ARROW  // what key is pressed with DOWN button
+
+//#define UP_BUTTON_KEY         'e'             // alphanumerical keyboard configuration
+//#define LEFT_BUTTON_KEY       's'             // alphanumerical keyboard configuration
+//#define DOWN_BUTTON_KEY       'd'             // alphanumerical keyboard configuration
+//#define RIGHT_BUTTON_KEY      'f'             // alphanumerical keyboard configuration
 
 #define BUTTON_COUNT  6
 
@@ -31,12 +43,12 @@ struct Button {
 
 // configure the buttons
 Button buttons[] = {
-  {false, KEY_LEFT_ARROW, LEFT_BUTTON,  '<', 14, 32}, // LEFT button
-  {false, KEY_RIGHT_ARROW,RIGHT_BUTTON, '>', 54, 32}, // RIGHT button
-  {false, KEY_UP_ARROW,   UP_BUTTON,    '^', 34, 16}, // UP button
-  {false, KEY_DOWN_ARROW, DOWN_BUTTON,  'v', 34, 48}, // DOWN button
-  {false, A_BUTTON_KEY,   A_BUTTON,     'A', 94, 36}, // A button
-  {false, B_BUTTON_KEY,   B_BUTTON,     'B', 114,28}  // B button
+  {false, LEFT_BUTTON_KEY,  LEFT_BUTTON,  '<', 14, 32}, // LEFT button
+  {false, RIGHT_BUTTON_KEY, RIGHT_BUTTON, '>', 54, 32}, // RIGHT button
+  {false, UP_BUTTON_KEY,    UP_BUTTON,    '^', 34, 16}, // UP button
+  {false, DOWN_BUTTON_KEY,  DOWN_BUTTON,  'v', 34, 48}, // DOWN button
+  {false, A_BUTTON_KEY,     A_BUTTON,     'A', 94, 36}, // A button
+  {false, B_BUTTON_KEY,     B_BUTTON,     'B', 114,28}  // B button
 };
 
 #define TEXT_SIZE             1
